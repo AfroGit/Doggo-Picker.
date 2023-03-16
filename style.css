@@ -11,8 +11,8 @@ header {
   margin-bottom: 30px;
   text-align: center;
   border: 2px solid green;
-  padding-left: ;
-  padding-right: ;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
 select {
