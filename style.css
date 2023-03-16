@@ -26,5 +26,11 @@ select {
 }
 
 .column {
+  flex: 1;
   border: 2px solid;
+}
+
+img {
+  max-width: 900px;
+  max-height: 700px;
 }
