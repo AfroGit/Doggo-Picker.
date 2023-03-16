@@ -34,3 +34,20 @@ img {
   max-width: 900px;
   max-height: 700px;
 }
+
+span {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.3rem;
+}
+
+
+#dog-name {
+  font-size: 1.5rem;
+  text-decoration:none;
+}
+
+
+#left-column {
+  text-align: center;
+}
