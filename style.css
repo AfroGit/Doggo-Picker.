@@ -1,5 +1,5 @@
 html {
-  border: 2px solid red;
+  /*border: 2px solid red;*/
   font-size: 2rem;
   font-family: 'Franklin Gothic Light', 'Arial Narrow', Arial, san serif;
   background: linear-gradient(lightyellow, orange);
@@ -10,7 +10,7 @@ html {
 header {
   margin-bottom: 30px;
   text-align: center;
-  border: 2px solid green;
+ /* border: 2px solid green;*/
   padding-left: 10vw;
   padding-right: 10vw;
 }
@@ -22,12 +22,12 @@ select {
 .section-container {
   display: flex;
   flex-direction: row;
-  border: 2px solid blue;
+ /* border: 2px solid blue;*/
 }
 
 .column {
   flex: 1;
-  border: 2px solid;
+ /* border: 2px solid;*/
 }
 
 img {
