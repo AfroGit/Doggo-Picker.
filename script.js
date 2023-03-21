@@ -25,26 +25,33 @@ select.addEventListener('change', event => {
   // console.log(event.target.value)
   let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
   getDoggoImg(url);
-  console.log(url)
 })
 
-const img = document.getElementById('.dog-img') 
+const img = document.querySelector('.dog-img') 
 
 const getDoggoImg = url => {
   fetch(url)//Going to above API url
-    .then((res) => {
-      // you don't need to do response.json() because you just need the url
-       console.log(response.url, 'getDoggoImg');
+    .then(res => {
+      // console.log(res.json());
       return res.json();//Get JSON message back
+      
     })
-    .then((data) => {
-      // this return the url to insert to the href
-       console.log(data.url)
-      // **************************************************************
-      // this is where the error is, the img with attribute src can't be asssigned because the <img src=""> is seen as null
-      img.src = data.url//Extract message from JSON and attach to img tag as new source
+    .then(data => {
+       img.src = data.message
     })
 }
+
+
+
+      
+      // this return the url to insert to the href
+       
+      //*******************************************************
+      /* this is where the error is, the img with attribute src can't be asssigned because the <img src=""> is seen as null Failure to use the right query selector caused untold havoc on enabling JS append images from the API to the DOM.
+Line 30 had a serious bug that was hard to map out and extinguish*/
+      //Extract message from JSON and attach to img tag as new source
+      
+ 
 
 
 
