@@ -26,6 +26,7 @@ select.addEventListener('change', event => {
   let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
   getDoggoImg(url);
   doggoInfo.assignMF();
+  doggoInfo.assignAge();
 })
 
 const img = document.querySelector('.dog-img') 
@@ -80,9 +81,15 @@ const doggoInfo = {
     }
     document.getElementById('MF').innerHTML = `S: ${this.MF}`
   },
+  
   assignName(array){
     this.rname = array[Math.floor(Math.random()* array.length)]
-    document.getElementById('dog-name').innerHTML = ` ${this.rnames}`
+    document.getElementById('dog-name').innerHTML = ` ${this.rname}`
+  },
+
+  assignAge(){
+    this.age = Math.floor(Math.random() * 16 + 1)//want a number not greater than 16
+    document.getElementById('age').innerHTML = `Age: ${this.age}`
   }
 
 }
