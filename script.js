@@ -25,6 +25,7 @@ select.addEventListener('change', event => {
   // console.log(event.target.value)
   let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
   getDoggoImg(url);
+  doggoInfo.assignMF();
 })
 
 const img = document.querySelector('.dog-img') 
@@ -68,7 +69,20 @@ const doggoInfo = {
         fact: '',
 
   assignMF() {
-    x = (Math.floor(Math.random() * 2))
+    x = (Math.floor(Math.random() * 2) == 0)
+    if(x){
+      this.MF = 'Female';
+      this.assignName(this.fNames)
+      
+    } else {
+      this.MF = 'Male';
+      this.assignName(this.mNames)
+    }
+    document.getElementById('MF').innerHTML = `S: ${this.MF}`
+  },
+  assignName(array){
+    this.rname = array[Math.floor(Math.random()* array.length)]
+    document.getElementById('dog-name').innerHTML = ` ${this.rnames}`
   }
 
 }
