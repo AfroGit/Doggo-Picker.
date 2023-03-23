@@ -27,6 +27,9 @@ select.addEventListener('change', event => {
   getDoggoImg(url);
   doggoInfo.assignMF();
   doggoInfo.assignAge();
+  doggoInfo.assignLikes();
+  doggoInfo.assignDislikes();
+   doggoInfo.assignFunFact();
 })
 
 const img = document.querySelector('.dog-img') 
@@ -101,6 +104,26 @@ const doggoInfo = {
       array[i] = t;
     }
     return array
+  },
+
+
+  assignLikes(){
+    this.likes = this.yatesShuffle(this.likesList).slice(0,2)
+    document.getElementById('likes').innerHTML = `Likes: ${this.likes[0]}, ${this.likes[1]}`
+  
+  },
+
+
+
+  assignDislikes(){
+    this.dislikes = this.yatesShuffle(this.dislikesList).slice(0,2)
+    document.getElementById('dislikes').innerHTML = `Dislikes: ${this.dislikes[0]}, ${this.dislikes[1]}`
+  },
+
+
+  assignFunFact(){
+    this.fact = this.factList[Math.floor(Math.random() * this.factList.length)]
+    document.getElementById("fun-facts").innerHTML = `Additional Info: ${this.fact}`
   }
 
 }
